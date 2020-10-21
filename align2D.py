@@ -2,8 +2,8 @@ from modeller import *
 
 env = environ()
 aln = alignment(env)
-mdl = model(env, file='4eamA', model_segment=('FIRST:A','LAST:A'))
-aln.append_model(mdl, align_codes='4eamA', atom_files='4eamA.pdb')
+mdl = model(env, file='4eam', model_segment=('FIRST:A','LAST:A'))
+aln.append_model(mdl, align_codes='4eam', atom_files='4eam.pdb')
 aln.append(file='target.fasta', align_codes='target', alignment_format='FASTA')
 aln.align2d()
 aln.write(file='aligned.fasta', alignment_format='FASTA')
