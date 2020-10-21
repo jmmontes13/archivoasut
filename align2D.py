@@ -9,3 +9,12 @@ aln.align2d()
 aln.write(file='aligned.fasta', alignment_format='FASTA')
 aln.write(file='aligned.ali', alignment_format='PIR')
 aln.write(file='aligned.pap', alignment_format='PAP')
+gsfdsgfddsgdsgdsds
+gds
+gds
+sd
+gds
+gsd
+ds
+gds
+gdssdjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
