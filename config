@@ -1,0 +1,57 @@
+### WHAM config ###
+numDimensions 2			# number of dimensions in the dos histogram, energy and Q
+threads 2			# on multicore systems you can use up to 16 threads to speed up the calculations
+
+#UmbrellaType? Comment if no
+
+#umbrellaType UMBTYPE		# none, harmonic, quartic, gaussian, harmonicWalls
+#numUmbrella 1			# umbrella dimensions, maximum of two
+
+kB 0.008314			# Boltzmann constant in kcal/mol/K
+
+#run wham? Comment if no
+run_wham 			# creates optimal density of states, writen to dosFile, comment out to not run
+dosFile dos			# density of states output filename for run_wham, input filename for analysis (i.e. run_cv)
+
+#run_cv? Comment if no
+run_cv				# reads dosFile, comment out to not run
+run_cv_out cv			# filename for the temperature curves
+startT 120			# starting temperature
+deltaT 0.6			# step in temperature
+ntemps 100			# total temps to generate
+
+#run free? Comment if no
+run_free			# reads dosFile, comment out to not run
+run_free_out free		# prefix for the free energy curves
+startTF 120			# first temperature to compute F(Q)
+deltaTF 5.0			# step in temperature
+ntempsF 10			# total F(Q) to generate
+readFreeEnergy			# read previous free_energy_out file
+free_energy_out	last_free	# filename for the free energy calculation
+
+### energy binning ###
+
+numBins 500
+start -200
+step 2
+
+### reaction coordinate 1 binning ###
+numBins 91
+start 0
+step 2
+
+### reaction coordinate 2 binning ###
+#numBins 68
+#start 0
+#step 2
+
+### list of histogram filenames and their temperatures ###
+numFiles       8
+name hist.115 temp 115
+name hist.125 temp 125
+name hist.135 temp 135
+name hist.145 temp 145
+name hist.155 temp 155
+name hist.165 temp 165
+name hist.175 temp 175
+name hist.185 temp 185
