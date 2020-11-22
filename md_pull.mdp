@@ -27,39 +27,39 @@ rvdw            = 1.4
 coulombtype     = PME
 fourierspacing  = 0.12
 fourier_nx      = 0
-fourier_ny      = 0
-fourier_nz      = 0
-pme_order       = 4
-ewald_rtol      = 1e-5
-optimize_fft    = yes
+fourier-ny      = 0
+fourier-nz      = 0
+pme-order       = 4
+ewald-rtol      = 1e-5
+optimize-fft    = yes
 ; Berendsen temperature coupling is on in two groups
 Tcoupl      = Nose-Hoover
-tc_grps     = Protein   Non-Protein 
-tau_t       = 1.0       1.0
-ref_t       = 180       180
+tc-grps     = Protein   Non-Protein 
+tau-t       = 1.0       1.0
+ref-t       = 180       180
 ; Pressure coupling is on
 Pcoupl          = Parrinello-Rahman 
 pcoupltype      = isotropic
-tau_p           = 1.0       
+tau-p           = 1.0       
 compressibility = 4.5e-5
-ref_p           = 1.0
-refcoord_scaling = com
+ref-p           = 1.0
+refcoord-scaling = com
 ; Generate velocities is off
-gen_vel     = no 
+gen-vel     = no 
 ; Periodic boundary conditions are on in all directions
 pbc     = xyz
 ; Long-range dispersion correction
 DispCorr    = EnerPres
 ; Pull code
 pull                    = variable
-pull_ncoords            = 1         ; only one reaction coordinate 
-pull_ngroups            = 2         ; two groups defining one reaction coordinate 
-pull_group1_name        = Chain_A 
-pull_group2_name        = Chain_B 
-pull_coord1_type        = umbrella  ; harmonic potential
-pull_coord1_geometry    = distance  ; simple distance increase 
-pull_coord1_dim         = N N Y
-pull_coord1_groups      = 1 2
-pull_coord1_start       = yes       ; define initial COM distance > 0
-pull_coord1_rate        = 0.01      ; 0.01 nm per ps = 10 nm per ns
-pull_coord1_k           = 1000      ; kJ mol^-1 nm^-2
+pull-ncoords            = 1         ; only one reaction coordinate 
+pull-ngroups            = 2         ; two groups defining one reaction coordinate 
+pull-group1-name        = Chain_A 
+pull-group2-name        = Chain_B 
+pull-coord1-type        = umbrella  ; harmonic potential
+pull-coord1-geometry    = distance  ; simple distance increase 
+pull-coord1-dim         = N N Y
+pull-coord1-groups      = 1 2
+pull-coord1-start       = yes       ; define initial COM distance > 0
+pull-coord1-rate        = 0.01      ; 0.01 nm per ps = 10 nm per ns
+pull-coord1-k           = 1000      ; kJ mol^-1 nm^-2
