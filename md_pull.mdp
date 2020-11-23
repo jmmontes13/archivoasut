@@ -51,12 +51,11 @@ pbc     = xyz
 ; Long-range dispersion correction
 DispCorr    = EnerPres
 ; Pull code
-pull                    = variable
+pull                    = umbrella
 pull-ncoords            = 1         ; only one reaction coordinate 
 pull-ngroups            = 2         ; two groups defining one reaction coordinate 
-pull-group1-name        = Chain_A 
-pull-group2-name        = Chain_B 
-pull-coord1-type        = umbrella  ; harmonic potential
+pull-group1-name        = 1 
+pull-group2-name        = 2 
 pull-coord1-geometry    = distance  ; simple distance increase 
 pull-coord1-dim         = N N Y
 pull-coord1-groups      = 1 2
