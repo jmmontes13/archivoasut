@@ -57,8 +57,10 @@ pull-ngroups            = 2         ; two groups defining one reaction coordinat
 pull-group1-name        = 1 
 pull-group2-name        = 2 
 pull-coord1-geometry    = distance  ; simple distance increase 
-pull-coord1-dim         = N N Y
+pull-coord1-dim         = Y Y Y
 pull-coord1-groups      = 1 2
 pull-coord1-start       = yes       ; define initial COM distance > 0
-pull-coord1-rate        = 0.01      ; 0.01 nm per ps = 10 nm per ns
-pull-coord1-k           = 3      ; kJ mol^-1 nm^-2
+pull-coord1-rate        = 0.00      ; 0.00 nm per ps = 00 nm per ns
+pull-coord1-k           = 4      ; kJ mol^-1 nm^-2
+pull-nstxout            = 500   
+pull-nstfout            = 500
