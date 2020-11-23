@@ -1,6 +1,6 @@
 
 ; Run parameters
-integrator  = md
+integrator  = sd
 dt          = 0.002
 tinit       = 0
 nsteps      = 250000    ; 500 ps
@@ -12,8 +12,8 @@ nstfout     = 500
 
 nstenergy   = 5000
 nstxtcout = 5000
-compressed-x-grps = system	; group(s) to write to .xtc trajectory
-energygrps = system 	; group(s) to write to energy file 
+compressed-x-grps = 1 2	; group(s) to write to .xtc trajectory
+energygrps = 1 2 	; group(s) to write to energy file 
 
 ; Bond parameters
 constraint_algorithm    = lincs
@@ -37,16 +37,17 @@ ewald-rtol      = 1e-5
 
 ;Temperature coupling 
 tc_grps     = 1   2 
-tau_t = 1.0 		; Temp coupling time constant. Smaller values = stronger coupling 
-ref_t = 120.0 		; In reduced units. Many proteins fold at T=120-180 in CA model
+tau_t = 1.0 1.0 		; Temp coupling time constant. Smaller values = stronger coupling 
+ref_t = 120.0 120.0		; In reduced units. Many proteins fold at T=120-180 in CA model
 
 
+
+; Generate velocities is off
+gen_vel     = no 
 
 
 vdwtype = User 		; instead of the standard interaction types 
 
-
-table-extension = 50 	; (nm) required if using abc
 
 ; Periodic boundary conditions are on in all directions
 pbc     = xyz
