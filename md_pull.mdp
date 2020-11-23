@@ -34,7 +34,7 @@ ewald-rtol      = 1e-5
 optimize-fft    = yes
 ; Berendsen temperature coupling is on in two groups
 Tcoupl      = Nose-Hoover
-tc-grps     = Protein   Non-Protein 
+tc-grps     = 1   2 
 tau-t       = 1.0       1.0
 ref-t       = 180       180
 ; Pressure coupling is on
