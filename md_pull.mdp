@@ -21,7 +21,7 @@ constraint_algorithm    = lincs
 constraints             = all-bonds
 continuation            = yes       ; continuing from NPT 
 ; Single-range cutoff scheme
-cutoff-scheme   = Verlet
+cutoff-scheme   = group 
 nstlist         = 20 
 ns_type         = grid 
 rlist           = 1.4
@@ -40,16 +40,6 @@ ewald-rtol      = 1e-5
 tc-grps = system 
 tau_t = 1.0 		; Temp coupling time constant. Smaller values = stronger coupling 
 ref_t = 120.0 		; In reduced units. Many proteins fold at T=120-180 in CA model
-
-
-
-;Velocity generation 
-gen_vel = yes 		; Generate initial velocities based on a Maxwell distribution
-gen_temp = 120.0 	; Temp to generate initial velocities. Equals ref_t
-gen_seed = -1 		; Random seed for generation of initial velocities
-ld_seed = -1		; Random seed for langevin dynamics
-comm_mode = angular 	; Center of Mass velocity removal. Check if it is appropriate
-
 
 
 
