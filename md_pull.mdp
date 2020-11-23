@@ -36,7 +36,7 @@ pme-order       = 4
 ewald-rtol      = 1e-5
 
 ;Temperature coupling 
-tc-grps = system 
+tc_grps     = 1   2 
 tau_t = 1.0 		; Temp coupling time constant. Smaller values = stronger coupling 
 ref_t = 120.0 		; In reduced units. Many proteins fold at T=120-180 in CA model
 
