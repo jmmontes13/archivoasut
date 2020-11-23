@@ -1,5 +1,4 @@
 
-define      = -DPOSRES_B
 ; Run parameters
 integrator  = md
 dt          = 0.002
@@ -71,4 +70,3 @@ pull-coord1-rate        = 0.00      ; 0.00 nm per ps = 00 nm per ns
 pull-coord1-k           = 4      ; kJ mol^-1 nm^-2
 pull-nstxout            = 500   
 pull-nstfout            = 500
-pull-geometry           = direction-periodic
