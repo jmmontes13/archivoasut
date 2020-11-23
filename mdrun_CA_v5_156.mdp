@@ -8,8 +8,8 @@ nstlog 	= 100000 	; frequency to write energies to log file
 nstenergy = 5000	; frequency to write energies to .edr energy file 
 nstxtcout = 5000	; frequency to write coordinates to .xtc trajectory file
 
-xtc_grps = system	; group(s) to write to .xtc trajectory
-energygrps = system 	; group(s) to write to energy file 
+compressed-x-grps = 1 2	; group(s) to write to .xtc trajectory
+energygrps = 1 2 	; group(s) to write to energy file 
 ;NOTE: group name "system" is defined if you are NOT using an index file. If you use an
 ;index file, all group references need to be consistent with the names given in the index
 ;file. Our webpage, by default, names the chains "1", "2", ... You can change these names
@@ -47,9 +47,9 @@ table-extension = 50 	; (nm) required if using abc
 ;Basically, you should use gromacs4.6 for calpha, until tables are supported in 5
 
 ;Temperature coupling 
-tc-grps = system 
-tau_t = 1.0 		; Temp coupling time constant. Smaller values = stronger coupling 
-ref_t = 156.0 		; In reduced units. Many proteins fold at T=120-180 in CA model
+tc-grps = 1 2 
+tau_t = 1.0 1.0 		; Temp coupling time constant. Smaller values = stronger coupling 
+ref_t = 156.0 156.0 		; In reduced units. Many proteins fold at T=120-180 in CA model
 
 ;Pressure coupling 
 Pcoupl = no 		; There is no solvent, thus we do not require pressure
