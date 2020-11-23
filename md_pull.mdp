@@ -1,4 +1,4 @@
-title       = Umbrella pulling simulation 
+
 define      = -DPOSRES_B
 ; Run parameters
 integrator  = md
@@ -7,11 +7,15 @@ tinit       = 0
 nsteps      = 250000    ; 500 ps
 nstcomm     = 10
 ; Output parameters
-nstxout     = 5000      ; every 10 ps
-nstvout     = 5000 
+nstxout     = 0      
+nstvout     = 0
 nstfout     = 500
-nstxtcout   = 500       ; every 1 ps
-nstenergy   = 500
+nstxout-compressed   = 500       ; every 1 ps
+nstenergy   = 5000
+nstxtcout = 5000
+xtc_grps = system	; group(s) to write to .xtc trajectory
+energygrps = system 	; group(s) to write to energy file 
+
 ; Bond parameters
 constraint_algorithm    = lincs
 constraints             = all-bonds
@@ -31,25 +35,39 @@ fourier-ny      = 0
 fourier-nz      = 0
 pme-order       = 4
 ewald-rtol      = 1e-5
-optimize-fft    = yes
-; Berendsen temperature coupling is on in two groups
-Tcoupl      = Nose-Hoover
-tc-grps     = 1   2 
-tau-t       = 1.0       1.0
-ref-t       = 120       120
-; Pressure coupling is on
-Pcoupl          = Parrinello-Rahman 
-pcoupltype      = isotropic
-tau-p           = 1.0       
-compressibility = 4.5e-5
-ref-p           = 1.0
-refcoord-scaling = com
-; Generate velocities is off
-gen-vel     = no 
+
+;Temperature coupling 
+tc-grps = system 
+tau_t = 1.0 		; Temp coupling time constant. Smaller values = stronger coupling 
+ref_t = 120.0 		; In reduced units. Many proteins fold at T=120-180 in CA model
+
+;Pressure coupling 
+Pcoupl = no 		; There is no solvent, thus we do not require pressure
+
+;Velocity generation 
+gen_vel = yes 		; Generate initial velocities based on a Maxwell distribution
+gen_temp = 120.0 	; Temp to generate initial velocities. Equals ref_t
+gen_seed = -1 		; Random seed for generation of initial velocities
+ld_seed = -1		; Random seed for langevin dynamics
+comm_mode = angular 	; Center of Mass velocity removal. Check if it is appropriate
+
+
+
+
+
+vdwtype = User 		; instead of the standard interaction types 
+pbc = no 		; Periodic boundary conditions not needed if CoM motions removed
+cutoff-scheme = group 
+table-extension = 50 	; (nm) required if using abc
+
 ; Periodic boundary conditions are on in all directions
 pbc     = xyz
 ; Long-range dispersion correction
 DispCorr    = EnerPres
+
+;Pressure coupling 
+Pcoupl = no 		; There is no solvent, thus we do not require pressure
+
 ; Pull code
 pull                    = umbrella
 pull-ncoords            = 1         ; only one reaction coordinate 
