@@ -36,9 +36,7 @@ optimize-fft    = yes
 Tcoupl      = Nose-Hoover
 tc-grps     = 1   2 
 tau-t       = 1.0       1.0
-ref-t       = 180       180
-tau-t       = 1.0       1.0
-ref-t       = 180       180
+ref-t       = 120       120
 ; Pressure coupling is on
 Pcoupl          = Parrinello-Rahman 
 pcoupltype      = isotropic
