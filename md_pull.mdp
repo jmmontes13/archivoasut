@@ -10,10 +10,10 @@ nstcomm     = 10
 nstxout     = 0      
 nstvout     = 0
 nstfout     = 500
-nstxout-compressed   = 500       ; every 1 ps
+nstxout   = 500       ; every 1 ps
 nstenergy   = 5000
 nstxtcout = 5000
-xtc_grps = system	; group(s) to write to .xtc trajectory
+compressed-x-grps = system	; group(s) to write to .xtc trajectory
 energygrps = system 	; group(s) to write to energy file 
 
 ; Bond parameters
@@ -41,8 +41,7 @@ tc-grps = system
 tau_t = 1.0 		; Temp coupling time constant. Smaller values = stronger coupling 
 ref_t = 120.0 		; In reduced units. Many proteins fold at T=120-180 in CA model
 
-;Pressure coupling 
-Pcoupl = no 		; There is no solvent, thus we do not require pressure
+
 
 ;Velocity generation 
 gen_vel = yes 		; Generate initial velocities based on a Maxwell distribution
@@ -56,8 +55,8 @@ comm_mode = angular 	; Center of Mass velocity removal. Check if it is appropria
 
 
 vdwtype = User 		; instead of the standard interaction types 
-pbc = no 		; Periodic boundary conditions not needed if CoM motions removed
-cutoff-scheme = group 
+
+
 table-extension = 50 	; (nm) required if using abc
 
 ; Periodic boundary conditions are on in all directions
